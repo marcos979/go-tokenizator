@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "dee240d2-a481-4bcf-bc38-73b955b612ce",
+		"name": "go-tokenizator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/tokenize",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "an-api-key-fldoa9a83nghxp30m6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://somehost/somepath/avideo.m3u8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tokenize",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tokenize"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "fldoa9a83nghxp30m6",
+							"disabled": true
+						}
+					]
+				},
+				"description": "\nReturns the url with the token added."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
