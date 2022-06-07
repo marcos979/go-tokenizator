@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+type generateTokenFn func(string) (string, error)
+
 func GenerateToken(url string) (string, error) {
 	data, err := extractDataToHash(url)
 	if err != nil {
@@ -31,8 +33,8 @@ func GenerateToken(url string) (string, error) {
 	return shaToken, nil
 }
 
-func GenerateTokenizedUrl(url string) (string, error) {
-	token, err := GenerateToken(url)
+func GenerateTokenizedUrl(fn generateTokenFn, url string) (string, error) {
+	token, err := fn(url)
 	if err != nil {
 		return "", err
 	}

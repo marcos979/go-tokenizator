@@ -42,7 +42,7 @@ func tokenizeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	token, err := model.GenerateTokenizedUrl(tokenizeParam.Url)
+	token, err := model.GenerateTokenizedUrl(model.GenerateToken, tokenizeParam.Url)
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		return
